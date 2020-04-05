@@ -1,0 +1,26 @@
+
+@import "variables";
+@import "mixins";
+@import "classes";
+
+@import './fonts/Roboto';
+@import './fonts/Material-Icons';
+
+body {
+  font-size: 14px;
+  font-family: $main-font;
+
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: none;
+
+  @include custom-scrollbar;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: $main-font;
+}
+
+p {
+  line-height: normal;
+}

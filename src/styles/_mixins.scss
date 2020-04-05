@@ -1,0 +1,85 @@
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin between-children {
+  &>:not(:last-child) {
+    @content;
+  }
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder { @content; }
+  &:-moz-placeholder           { @content; }
+  &::-moz-placeholder          { @content; }
+  &:-ms-input-placeholder      { @content; }
+}
+
+@mixin custom-scrollbar {
+  -webkit-overflow-scrolling: touch;
+  &::-webkit-scrollbar-track {
+    background-color: rgba($hover-dark, .8);
+    border: none;
+    box-shadow: 0 0 3px $dark inset;
+  }
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 4px;
+    background: rgba(0,0,0,0.15);
+    margin: 0;
+  }
+  &::-webkit-scrollbar-thumb {
+    min-height: 2rem;
+    background: $accent-color;
+    border-radius: 2px;
+    background-clip: content-box;
+    
+    @include breakpoint($tablet) {
+      &:hover {
+        background-color: $action-color;
+      }
+    }
+  }
+}
+
+@mixin breakpoint-width($min, $max : 0) {
+  @if ($max == 0) {
+    @media only screen
+    and (min-width: $min) { @content; }
+  } @else {
+    @media only screen
+    and (min-width: $min)
+    and (max-width: $max - 1) { @content; }
+  }
+}
+
+@mixin breakpoint-height($min, $max : 0) {
+  @if ($max == 0) {
+    @media only screen
+    and (min-height: $min) { @content; }
+  } @else {
+    @media only screen
+    and (min-height: $min)
+    and (max-height: $max - 1) { @content; }
+  }
+}
+
+@mixin breakpoint($args...) {
+  @include breakpoint-width($args...) {
+    @content;
+  }
+}
+
+@function rem($pixels, $context: $base-font-size) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+  
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+  
+  @return $pixels / $context * 1rem;
+}

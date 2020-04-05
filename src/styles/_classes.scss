@@ -1,0 +1,38 @@
+
+.base-content {
+  height: 100vh;
+  overflow: hidden;
+  padding: 4.125rem 1rem 1rem 1rem;
+  background-color: $bg-gray;
+  
+  @include breakpoint($tablet) {
+    padding: 5.375rem 1rem 1rem 1rem;
+  }
+}
+
+.base-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  border-radius: $base-border-radius;
+  box-shadow: $base-shadow;
+}
+
+.page-title {
+  //font-family: $bold-font;
+  color: $base-text;
+  font-size: 2.5rem;
+  
+  &--white {
+    color: $light-text;
+  }
+}
+
+.nowrap {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
