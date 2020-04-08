@@ -1,10 +1,13 @@
 
 import VueRouter from 'vue-router';
 
+import Main from '../views/Main';
+
 const routes = [
   {
-    name: 'root',
+    name: 'main',
     path: '/',
+    component: Main,
   },
   {
     path: '*',

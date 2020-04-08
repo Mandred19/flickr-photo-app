@@ -1,13 +1,8 @@
 
 .base-content {
-  height: 100vh;
+  height: 100%;
+  padding: 0 1rem;
   overflow: hidden;
-  padding: 4.125rem 1rem 1rem 1rem;
-  background-color: $bg-gray;
-  
-  @include breakpoint($tablet) {
-    padding: 5.375rem 1rem 1rem 1rem;
-  }
 }
 
 .base-btn {

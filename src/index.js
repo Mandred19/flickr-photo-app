@@ -42,6 +42,7 @@ Vue.mixin({
       isMobile: 'getIsMobile',
       windowWidth: 'getWindowWidth',
     }),
+    appName: () => 'Flickr App',
   }
 });
 

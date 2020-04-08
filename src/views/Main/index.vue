@@ -1,10 +1,10 @@
 <template lang="pug">
-  section Main
+  section.container-fluid Main
 </template>
 
 <script>
   export default {
-    name: 'Main'
+    name: 'Main',
   };
 </script>
 
