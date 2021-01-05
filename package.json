@@ -74,7 +74,7 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bootstrap": "^4.4.1",
     "bootstrap-vue": "^2.10.1",
     "bowser": "^2.7.0",
